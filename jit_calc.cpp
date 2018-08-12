@@ -1,3 +1,5 @@
+// Public domain
+
 #pragma warning(disable : 4996)
 
 #include <Windows.h>

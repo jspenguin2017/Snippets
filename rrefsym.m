@@ -1,6 +1,6 @@
 function out = rrefsym (mat, reduce)
 % RREFSYM Reduced Row Echelon Form with Symbolic Steps
-% License: GNU GPL v3
+% License: GPL-3.0
 % out = rrefs(mat, reduce) show step by step procedure to get to (reduced)
 % row echelon form of symbolic matrix mat, then return manipulated matrix.
 % Please load and initialize symbolic package before calling this function,

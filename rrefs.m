@@ -1,6 +1,6 @@
 function out = rrefs (mat, reduce)
 % RREFS Reduced Row Echelon Form with Steps
-% License: GNU GPL v3
+% License: GPL-3.0
 % out = rrefs(mat, reduce) show step by step procedure to get to (reduced)
 % row echelon form of matrix mat, then return manipulated matrix.
 % WARNING: This function may not be reliable for some matrices.
