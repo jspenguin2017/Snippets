@@ -69,7 +69,7 @@ disp(rref(oldmat));
 
 % Reset formatting
 format short;
-end % func
+end % function
 
 function out = ro_add (mat, r_target, r_source, factor)
 % Add row r_source times factor to row r_target
@@ -81,7 +81,7 @@ disp(factor);
 disp('');
 disp(out);
 disp('');
-end % func
+end % function
 
 function out = ro_scale (mat, r, factor)
 % Multiply row r by factor
@@ -93,7 +93,7 @@ disp(factor);
 disp('');
 disp(out);
 disp('');
-end % func
+end % function
 
 function out = ro_swap (mat, r1, r2)
 % Swap row r1 with row r2
@@ -105,4 +105,4 @@ fprintf('R%d <-> R%d\n', r1, r2);
 disp('');
 disp(out);
 disp('');
-end % func
+end % function

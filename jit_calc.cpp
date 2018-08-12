@@ -131,7 +131,7 @@ int main()
 		(int*&)p[0] = &op2; p += sizeof(int*);
 
 		// Do multiplication
-		*p++ = 0xF7; *p++ = 0xEA; //Imul EDX
+		*p++ = 0xF7; *p++ = 0xEA; // Imul EDX
 
 		// Return result
 		*p++ = 0xA3; // Mov (JITReturn), EAX
