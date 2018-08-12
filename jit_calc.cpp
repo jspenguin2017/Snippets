@@ -138,9 +138,9 @@ int main()
 		(int*&)p[0] = &JITReturn; p += sizeof(int*);
 
 		// Clean up
-		*p++ = 0x5A; //Pop EDX
-		*p++ = 0x58; //Pop EAX
-		*p++ = 0xC3; //Ret
+		*p++ = 0x5A; // Pop EDX
+		*p++ = 0x58; // Pop EAX
+		*p++ = 0xC3; // Ret
 
 		// Execute payload
 		Function f;
