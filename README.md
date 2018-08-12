@@ -1,2 +1,0 @@
-# Snippets
-Random code snippets
