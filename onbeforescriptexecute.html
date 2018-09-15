@@ -131,6 +131,9 @@
                     // manipulate it however you want, just pass the final
                     // payload to e.replacePayload when you are done
                     e.replacePayload("console.log(2);");
+                    // Later event handlers can override your payload, you
+                    // can call e.stopPropagation to make sure the current
+                    // payload is applied
                 }
             };
         })();
