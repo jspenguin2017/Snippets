@@ -127,6 +127,9 @@
 
                 // Change the code that runs
                 if (e.script.textContent.includes("console.log")) {
+                    // Original payload is e.script.textContent, you can
+                    // manipulate it however you want, just pass the final
+                    // payload to e.replacePayload when you are done
                     e.replacePayload("console.log(2);");
                 }
             };
