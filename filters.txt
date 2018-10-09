@@ -16,10 +16,6 @@
 .com/?aff=$3p,popup,badfilter
 @@||messenger.com^$ghide
 
-# Bad filters in EasyPrivacy
-# https://github.com/NanoMeow/QuickReports/issues/181
-@@||surveywall-api.survata.com^$domain=api.survata.net
-
 # ############################################################################ #
 
 # Security
@@ -34,5 +30,9 @@
 
 # Colombia ads
 adageindia.in,bombaytimes.com,businessinsider.in,gadgetsnow.com,gizmodo.in,iamgujarat.com,idiva.com,in.techradar.com,indiatimes.com,lifehacker.co.in,mensxp.com,samayam.com,timesofindia.com##+js(nano-colombiaonline-com.js)
+
+# Bad filters in EasyPrivacy
+# https://github.com/NanoMeow/QuickReports/issues/181
+@@||surveywall-api.survata.com^$domain=api.survata.net
 
 # ############################################################################ #
