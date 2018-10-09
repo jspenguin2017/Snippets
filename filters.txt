@@ -5,6 +5,7 @@
 # License: GPL-3.0
 
 # My personal filter list
+# Subscribe: https://raw.githubusercontent.com/jspenguin2017/Snippets/master/filters.txt
 
 # ############################################################################ #
 
