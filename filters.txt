@@ -18,6 +18,16 @@
 
 # ############################################################################ #
 
+# Annoyance
+
+# Spam bots
+||driftt.com^$third-party
+||intercom.io^$third-party
+||livechatinc.com^$third-party
+||tawk.to^$third-party
+
+# ############################################################################ #
+
 # Security
 
 # Bad websites, some NSFW
