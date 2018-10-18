@@ -21,10 +21,10 @@
 # Annoyance
 
 # Spam bots
-||driftt.com^$third-party
-||intercom.io^$third-party
-||livechatinc.com^$third-party
-||tawk.to^$third-party
+||driftt.com^$3p
+||intercom.io^$3p
+||livechatinc.com^$3p
+||tawk.to^$3p
 
 # ############################################################################ #
 
