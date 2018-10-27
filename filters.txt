@@ -23,6 +23,7 @@
 # Spam bots
 ||driftt.com^$3p
 ||intercom.io^$3p
+||jivosite.com^$3p
 ||livechatinc.com^$3p
 ||tawk.to^$3p
 
