@@ -15,10 +15,24 @@ migration progress.
 
 `Node.js 8` runtime, support ends 2019.12.
 
-## Lightsail Server
+## Lightsail Servers
 
-`hugoxu.com` domain.
+`hugoxu.com` base domain, registration automatic renew.
+
+### `legacy.hugoxu.com`
+
+Legacy server, runs a mirror of `jspenguin.com`.
 
 `Debian 9` operating system, support ends 2022.06.
 
 `Node.js 10` runtime, support ends 2021.04.
+
+### `git.hugoxu.com`
+
+Private Git server.
+
+`Debian 9` operating system, support ends 2022.06.
+
+`Node.js 10` runtime, support ends 2021.04.
+
+`Gitea` server engine, rolling release.
