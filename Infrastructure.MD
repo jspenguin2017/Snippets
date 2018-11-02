@@ -1,12 +1,12 @@
 # Infrastructure
 
-This document details my server layout.
+This document details my servers layout.
 
-Design and documentation licensed under MIT.
+Design and description licensed under MIT.
 
 ## Linode Server
 
-This is my legacy server, I will be moving to another host soon.
+This is my legacy server, I will move it to another host soon.
 
 `jspenguin.com` domain, registration expires 2019.04 or 2020.04 depending on my
 migration progress.
