@@ -17,7 +17,7 @@ migration progress.
 
 ## Lightsail Servers
 
-`hugoxu.com` base domain, registration automatic renew.
+`hugoxu.com` base domain, registration automatically renew.
 
 ### `legacy.hugoxu.com`
 
