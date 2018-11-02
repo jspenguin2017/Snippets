@@ -19,14 +19,6 @@ migration progress.
 
 `hugoxu.com` base domain, registration automatically renew.
 
-### `legacy.hugoxu.com`
-
-Legacy server, runs a mirror of `jspenguin.com`.
-
-`Debian 9` operating system, support ends 2022.06.
-
-`Node.js 10` runtime, support ends 2021.04.
-
 ### `git.hugoxu.com`
 
 Private Git server.
@@ -36,3 +28,11 @@ Private Git server.
 `Node.js 10` runtime, support ends 2021.04.
 
 `Gitea` server engine, rolling release.
+
+### `legacy.hugoxu.com`
+
+Legacy server, runs a mirror of `jspenguin.com`.
+
+`Debian 9` operating system, support ends 2022.06.
+
+`Node.js 10` runtime, support ends 2021.04.
