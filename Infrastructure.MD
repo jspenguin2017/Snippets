@@ -6,7 +6,7 @@ Design and description licensed under MIT.
 
 ## Linode Server
 
-This is my legacy server, I will move it to another host soon.
+Legacy server, I will move it to another host soon.
 
 `jspenguin.com` domain, registration expires 2019.04 or 2020.04 depending on my
 migration progress.
@@ -21,7 +21,7 @@ migration progress.
 
 ### `legacy.hugoxu.com`
 
-Legacy server, runs a mirror of `jspenguin.com`.
+Legacy server.
 
 `Debian 9` operating system, support ends 2022.06.
 
