@@ -1,4 +1,4 @@
-// Public domain
+// Licensed under CC0-1.0
 
 #pragma warning(disable : 4996)
 
