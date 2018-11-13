@@ -2,7 +2,7 @@
 
 This document details my servers layout.
 
-Design and description licensed under MIT.
+Design and description licensed under CC-BY-4.0.
 
 ## Linode Server
 
