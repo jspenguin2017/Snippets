@@ -26,3 +26,11 @@ Legacy server.
 `Debian 9` operating system, support ends 2022.06.
 
 `Node.js 10` runtime, support ends 2021.04.
+
+### `clockwork.hugoxu.com`
+
+`Debian 9` operating system, support ends 2022.06.
+
+`Node.js 10` runtime, support ends 2021.04.
+
+`ASP.NET Core 2.1` runtime, support ends 2021.08.
