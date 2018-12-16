@@ -30,12 +30,15 @@
 
 const fs = require("fs");
 const path = require("path");
+const stream = require("stream");
 const zlib = require("zlib");
 
 // --------------------------------------------------------------------------------------------- //
 
 const aws = require("aws-sdk");
+
 const s3 = new aws.S3();
+const s3a = new aws.S3({ credentials: false });
 
 // --------------------------------------------------------------------------------------------- //
 
@@ -66,7 +69,7 @@ const S3ResponseHandler = (err, data) => {
 
 // --------------------------------------------------------------------------------------------- //
 
-const CreateReadStream = (bucket, key) => {
+const CreateReadStream = (bucket, key, sign) => {
     S3RequestValidator(bucket, key);
 
     const params = {
@@ -74,7 +77,7 @@ const CreateReadStream = (bucket, key) => {
         Key: key,
     };
 
-    return s3.getObject(params, S3ResponseHandler).createReadStream();
+    return (sign ? s3 : s3a).getObject(params, S3ResponseHandler).createReadStream();
 };
 
 const CreateWriteStream = (bucket, key) => {
@@ -88,18 +91,18 @@ const CreateWriteStream = (bucket, key) => {
         Body: s,
     };
 
-    s3.putObject(params, handler);
+    s3.putObject(params, S3ResponseHandler);
 
     return s;
 };
 
 // --------------------------------------------------------------------------------------------- //
 
-const CreateGunzipStream = (stream) => {
-    return stream.pipe(zlib.createGunzip());
+const CreateGunzipStream = (s) => {
+    return s.pipe(zlib.createGunzip());
 };
 
-const CreateLineIterator = (stream, handler) => {
+const CreateLineIterator = (s, handler) => {
 
     // ----------------------------------------------------------------------------------------- //
 
@@ -119,14 +122,14 @@ const CreateLineIterator = (stream, handler) => {
 
     // ----------------------------------------------------------------------------------------- //
 
-    stream.setEncoding("utf8");
+    s.setEncoding("utf8");
 
-    stream.on("data", (chunk) => {
+    s.on("data", (chunk) => {
         data += chunk;
         dispatch();
     });
 
-    stream.on("end", () => {
+    s.on("end", () => {
         dispatch();
 
         if (data.length > 0) {
@@ -138,7 +141,7 @@ const CreateLineIterator = (stream, handler) => {
 
     // ----------------------------------------------------------------------------------------- //
 
-    stream.on("error", (err) => {
+    s.on("error", (err) => {
         Abort(err);
     });
 
@@ -148,12 +151,12 @@ const CreateLineIterator = (stream, handler) => {
 
 // --------------------------------------------------------------------------------------------- //
 
-// processor(line, stream)
+// processor(line, write)
 
 const LoadProprietaryCode = async (install = false) => {
     try {
         return require("./processor.js");
-    } catch {
+    } catch (err) {
         console.warn("Proprietary code not packaged! This can degrade performance.");
     }
 
@@ -206,7 +209,7 @@ const Main = async (event) => {
 
     const processor = await LoadProprietaryCode();
 
-    const zip = CreateReadStream(event.Bucket, event.Key);
+    const zip = CreateReadStream(event.Bucket, event.Key, event.Bucket !== "commoncrawl");
     const text = CreateGunzipStream(zip);
     const write = CreateWriteStream(
         "temp-storage-0",
