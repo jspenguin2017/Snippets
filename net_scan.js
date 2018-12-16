@@ -38,7 +38,6 @@ const zlib = require("zlib");
 const aws = require("aws-sdk");
 
 const s3 = new aws.S3();
-const s3a = new aws.S3({ credentials: false });
 
 // --------------------------------------------------------------------------------------------- //
 
@@ -63,13 +62,11 @@ const S3RequestValidator = (bucket, key) => {
 const S3ResponseHandler = (err, data) => {
     if (err)
         Abort(err);
-
-    void data; // Not used
 };
 
 // --------------------------------------------------------------------------------------------- //
 
-const CreateReadStream = (bucket, key, sign) => {
+const CreateReadStream = (bucket, key) => {
     S3RequestValidator(bucket, key);
 
     const params = {
@@ -77,7 +74,7 @@ const CreateReadStream = (bucket, key, sign) => {
         Key: key,
     };
 
-    return (sign ? s3 : s3a).getObject(params, S3ResponseHandler).createReadStream();
+    return s3.getObject(params, S3ResponseHandler).createReadStream();
 };
 
 const CreateWriteStream = (bucket, key) => {
@@ -169,7 +166,7 @@ const LoadProprietaryCode = async (install = false) => {
 
         let buf = "";
 
-        const s = CreateReadStream("lambda-storage-0", "processor.js", true);
+        const s = CreateReadStream("lambda-storage-0", "processor.js");
 
         // ------------------------------------------------------------------------------------- //
 
@@ -211,8 +208,10 @@ const Main = async (event) => {
         event.Bucket = "commoncrawl";
 
     const processor = await LoadProprietaryCode();
+    if (typeof processor !== "function" || processor.length !== 2)
+        Abort(new Error("Proprietary code corrupted"));
 
-    const zip = CreateReadStream(event.Bucket, event.Key, event.Bucket !== "commoncrawl");
+    const zip = CreateReadStream(event.Bucket, event.Key);
     const text = CreateGunzipStream(zip);
     const write = CreateWriteStream(
         "temp-storage-0",
