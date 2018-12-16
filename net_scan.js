@@ -169,7 +169,7 @@ const LoadProprietaryCode = async (install = false) => {
 
         let buf = "";
 
-        const s = CreateReadStream("lambda-storage-0", "process.js", true);
+        const s = CreateReadStream("lambda-storage-0", "processor.js", true);
 
         // ------------------------------------------------------------------------------------- //
 
