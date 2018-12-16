@@ -28,8 +28,8 @@
 
 "use strict";
 
-const assert = require("assert");
 const fs = require("fs");
+const path = require("path");
 const zlib = require("zlib");
 
 // --------------------------------------------------------------------------------------------- //
@@ -40,9 +40,14 @@ const s3 = new aws.S3();
 // --------------------------------------------------------------------------------------------- //
 
 const Abort = (err) => {
-    console.log(err.stack);
+    if (typeof err !== "object" || err === null || typeof err.stack !== "string")
+        return void Abort(new Error("An error occurred while handling another error"));
+
+    console.error(err.stack);
     process.exit(1);
 };
+
+// --------------------------------------------------------------------------------------------- //
 
 const S3RequestValidator = (bucket, key) => {
     if (typeof bucket !== "string")
@@ -95,6 +100,49 @@ const CreateGunzipStream = (stream) => {
 };
 
 const CreateLineIterator = (stream, handler) => {
+
+    // ----------------------------------------------------------------------------------------- //
+
+    let data = "";
+
+    const dispatch = () => {
+        while (data.length > 0) {
+            const i = data.indexOf("\r\n");
+            if (i === -1)
+                break;
+
+            const temp = data.substring(0, i);
+            data = data.substring(i + 2);
+            handler(temp);
+        }
+    };
+
+    // ----------------------------------------------------------------------------------------- //
+
+    stream.setEncoding("utf8");
+
+    stream.on("data", (chunk) => {
+        data += chunk;
+        dispatch();
+    });
+
+    stream.on("end", () => {
+        dispatch();
+
+        if (data.length > 0) {
+            const temp = data;
+            data = "";
+            handler(temp);
+        }
+    });
+
+    // ----------------------------------------------------------------------------------------- //
+
+    stream.on("error", (err) => {
+        Abort(err);
+    });
+
+    // ----------------------------------------------------------------------------------------- //
 
 };
 
@@ -152,23 +200,41 @@ const LoadProprietaryCode = async (install = false) => {
 
 // --------------------------------------------------------------------------------------------- //
 
-const Handler = async (event) => {
+const Main = async (event) => {
+    if (typeof event.Bucket !== "string")
+        event.Bucket = "commoncrawl";
 
+    const processor = await LoadProprietaryCode();
+
+    const zip = CreateReadStream(event.Bucket, event.Key);
+    const text = CreateGunzipStream(zip);
+    const write = CreateWriteStream(
+        "temp-storage-0",
+        "net-scan-data/" + path.basename(event.Key, ".warc.gz") + ".csv",
+    );
+
+    return new Promise((resolve, reject) => {
+        CreateLineIterator(text, (line) => {
+            processor(line, write);
+        });
+
+        text.on("end", () => {
+            write.end(() => {
+                resolve();
+            });
+        });
+    });
 };
 
 // --------------------------------------------------------------------------------------------- //
 
-exports.handler = Handler;
+exports.handler = Main;
 
 if (require.main === module) {
-    if (process.argv[2] === "--install") {
+    if (process.argv[2] === "--install")
         LoadProprietaryCode(true);
-    } else {
-        Handler({
-            Bucket: "",
-            Key: process.argv[2],
-        });
-    }
+    else
+        Main({ Key: process.argv[2] });
 }
 
 // --------------------------------------------------------------------------------------------- //
