@@ -91,7 +91,7 @@ const CreateWriteStream = (bucket, key) => {
         Body: s,
     };
 
-    s3.putObject(params, S3ResponseHandler);
+    s3.upload(params, S3ResponseHandler);
 
     return s;
 };
@@ -102,7 +102,7 @@ const CreateGunzipStream = (s) => {
     return s.pipe(zlib.createGunzip());
 };
 
-const CreateLineIterator = (s, handler) => {
+const CreateLineIterator = (s, handler, finish) => {
 
     // ----------------------------------------------------------------------------------------- //
 
@@ -137,6 +137,9 @@ const CreateLineIterator = (s, handler) => {
             data = "";
             handler(temp);
         }
+
+        if (typeof finish === "function")
+            finish();
     });
 
     // ----------------------------------------------------------------------------------------- //
@@ -160,13 +163,13 @@ const LoadProprietaryCode = async (install = false) => {
         console.warn("Proprietary code not packaged! This can degrade performance.");
     }
 
-    const code = new Promise((resolve, reject) => {
+    const code = await new Promise((resolve, reject) => {
 
         // ------------------------------------------------------------------------------------- //
 
         let buf = "";
 
-        const s = CreateReadStream("lambda-storage-0", "process.js");
+        const s = CreateReadStream("lambda-storage-0", "process.js", true);
 
         // ------------------------------------------------------------------------------------- //
 
@@ -217,15 +220,17 @@ const Main = async (event) => {
     );
 
     return new Promise((resolve, reject) => {
-        CreateLineIterator(text, (line) => {
-            processor(line, write);
-        });
-
-        text.on("end", () => {
-            write.end(() => {
-                resolve();
-            });
-        });
+        CreateLineIterator(
+            text,
+            (line) => {
+                processor(line, write);
+            },
+            () => {
+                write.end(() => {
+                    resolve();
+                });
+            },
+        );
     });
 };
 
