@@ -37,6 +37,13 @@
 
 # ############################################################################ #
 
+# Overrides
+
+# https://github.com/uBlockOrigin/uAssets/commit/d1bbe4df7c14133e827cc8fb1d92046a1b26abf0
+||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important,badfilter
+
+# ############################################################################ #
+
 # Testing
 
 # Colombia ads
