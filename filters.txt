@@ -32,8 +32,8 @@
 # Security
 
 # Bad websites, some NSFW
-||erogazopple.com^$document
-||erogazoufactory.com^$document
+||erogazopple.com^$doc
+||erogazoufactory.com^$doc
 
 # ############################################################################ #
 
