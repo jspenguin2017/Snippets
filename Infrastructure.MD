@@ -16,7 +16,7 @@ Legacy server.
 
 `Node.js 10` runtime, support ends 2021.04.
 
-### Floating
+## EC2 Servers
 
 `Debian 9` operating system, support ends 2022.06.
 
