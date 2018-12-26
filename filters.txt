@@ -31,7 +31,10 @@
 
 # Security
 
-# Bad websites, some NSFW
+# Bad websites
+||udemy.com^$doc
+
+# NSFW bad websites
 ||erogazopple.com^$doc
 ||erogazoufactory.com^$doc
 
