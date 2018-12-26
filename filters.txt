@@ -1,4 +1,4 @@
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
 
 # Title: Personal filters
 # Expires: 1 days
@@ -7,7 +7,7 @@
 # My personal filter list
 # https://raw.githubusercontent.com/jspenguin2017/Snippets/master/filters.txt
 
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
 
 # Unbreak
 
@@ -16,7 +16,7 @@
 .com/?aff=$3p,popup,badfilter
 @@||messenger.com^$ghide
 
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
 
 # Annoyance
 
@@ -27,7 +27,7 @@
 ||livechatinc.com^$3p
 ||tawk.to^$3p
 
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
 
 # Security
 
@@ -38,18 +38,30 @@
 ||erogazopple.com^$doc
 ||erogazoufactory.com^$doc
 
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
 
 # Overrides
 
 # https://github.com/uBlockOrigin/uAssets/commit/d1bbe4df7c14133e827cc8fb1d92046a1b26abf0
 ||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important,badfilter
 
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
 
 # Testing
 
 # Colombia ads
-adageindia.in,bombaytimes.com,businessinsider.in,gadgetsnow.com,gizmodo.in,iamgujarat.com,idiva.com,in.techradar.com,indiatimes.com,lifehacker.co.in,mensxp.com,samayam.com,timesofindia.com##+js(nano-colombiaonline-com.js)
+adageindia.in##+js(nano-colombiaonline-com.js)
+bombaytimes.com##+js(nano-colombiaonline-com.js)
+businessinsider.in##+js(nano-colombiaonline-com.js)
+gadgetsnow.com##+js(nano-colombiaonline-com.js)
+gizmodo.in##+js(nano-colombiaonline-com.js)
+iamgujarat.com##+js(nano-colombiaonline-com.js)
+idiva.com##+js(nano-colombiaonline-com.js)
+in.techradar.com##+js(nano-colombiaonline-com.js)
+indiatimes.com##+js(nano-colombiaonline-com.js)
+lifehacker.co.in##+js(nano-colombiaonline-com.js)
+mensxp.com##+js(nano-colombiaonline-com.js)
+samayam.com##+js(nano-colombiaonline-com.js)
+timesofindia.com##+js(nano-colombiaonline-com.js)
 
-# ############################################################################ #
+# ------------------------------------------------------------------------------------------------ #
