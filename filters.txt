@@ -49,6 +49,10 @@
 
 # Testing
 
+# https://github.com/jspenguin2017/uBlockProtector/issues/390
+# https://github.com/NanoAdblocker/NanoFilters/issues/277
+vvvvid.it##+js(nano-vvvvid-it.js)
+
 # Colombia ads
 adageindia.in##+js(nano-colombiaonline-com.js)
 bombaytimes.com##+js(nano-colombiaonline-com.js)
