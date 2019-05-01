@@ -33,6 +33,7 @@
 # Security
 
 # Bad websites
+||dcdirtylaundry.com^$doc
 ||udemy.com^$doc
 
 # NSFW bad websites
