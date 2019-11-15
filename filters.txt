@@ -21,6 +21,7 @@
 # Annoyance
 
 # Spam bots
+||az.jusbr.com/libs/chatlib/$3p
 ||driftt.com^$3p
 ||intercom.io^$3p
 ||jivosite.com^$3p
