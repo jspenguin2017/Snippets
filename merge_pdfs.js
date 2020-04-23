@@ -24,7 +24,7 @@ list = list.sort().filter(x => {
     if (x.endsWith(".pdf")) {
         return true;
     } else {
-        console.log("Ignoring non-pdf file: " + x);
+        console.log("Ignoring non-pdf entry: " + x);
         return false;
     }
 });
