@@ -21,6 +21,11 @@ output = output.trim();
 
 let list = fs.readdirSync(input);
 list = list.sort().filter(x => {
+    if (x === output) {
+        console.log("Output file already exists. Aborted.");
+        process.exit(1);
+    }
+
     if (x.endsWith(".pdf")) {
         return true;
     } else {
@@ -29,13 +34,8 @@ list = list.sort().filter(x => {
     }
 });
 
-if (list.includes(output)) {
-    console.log("Output file already exists. Aborted.");
-    process.exit(1);
-} else {
-    console.log("Merging these PDF files:");
-    console.log(list);
-}
+console.log("Merging these PDF files:");
+console.log(list);
 
 list.push(output);
 
@@ -46,3 +46,4 @@ console.log(result);
 
 console.log("If it did not work, try to install pdfunite:");
 console.log("    sudo apt install poppler-utils");
+console.log("Also, some PDF files (such as encrypted ones) are not supported pdfunite.");
