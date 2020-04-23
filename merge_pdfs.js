@@ -44,5 +44,5 @@ const result = cp.spawnSync("pdfunite", list);
 console.log("Finished, result:");
 console.log(result);
 
-console.log("If it did not work try to install pdfunite:");
+console.log("If it did not work, try to install pdfunite:");
 console.log("    sudo apt install poppler-utils");
