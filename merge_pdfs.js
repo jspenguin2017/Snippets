@@ -20,16 +20,16 @@ input = input.trim();
 output = output.trim();
 
 let list = fs.readdirSync(input);
-list = list.sort().filter(x => {
-    if (x === output) {
+list = list.sort().filter(elem => {
+    if (elem === output) {
         console.log("Output file already exists. Aborting.");
         process.exit(1);
     }
 
-    if (x.endsWith(".pdf")) {
+    if (elem.endsWith(".pdf")) {
         return true;
     } else {
-        console.log("Ignoring non-pdf entry: " + x);
+        console.log("Ignoring non-pdf entry: " + elem);
         return false;
     }
 });
