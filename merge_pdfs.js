@@ -22,7 +22,7 @@ output = output.trim();
 let list = fs.readdirSync(input);
 list = list.sort().filter(x => {
     if (x === output) {
-        console.log("Output file already exists. Aborted.");
+        console.log("Output file already exists. Aborting.");
         process.exit(1);
     }
 
