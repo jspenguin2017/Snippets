@@ -1,6 +1,6 @@
 // Licensed under CC0-1.0
 //
-// Merge all PDF files in a directory to one file, sorted by file name
+// Merge all PDF files in a directory into one file, sorted by file name
 
 "use strict";
 
