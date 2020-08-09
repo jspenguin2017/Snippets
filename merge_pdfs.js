@@ -46,4 +46,4 @@ console.log(result);
 
 console.log("If it did not work, try to install pdfunite:");
 console.log("    sudo apt install poppler-utils");
-console.log("Also, some PDF files (such as encrypted ones) are not supported pdfunite.");
+console.log("Also, some PDF files (such as encrypted ones) are not supported by pdfunite.");
