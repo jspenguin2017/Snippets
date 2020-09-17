@@ -9,19 +9,11 @@
 
 # ------------------------------------------------------------------------------------------------ #
 
-# Unbreak
-
-# Bad filters in EasyList China
-# https://www.messenger.com/
-.com/?aff=$3p,popup,badfilter
-@@||messenger.com^$ghide
-
-# ------------------------------------------------------------------------------------------------ #
-
 # Annoyance
 
 # Spam bots
 ||az.jusbr.com/libs/chatlib/$3p
+||chatra.io^$3p
 ||driftt.com^$3p
 ||intercom.io^$3p
 ||jivosite.com^$3p
@@ -40,13 +32,6 @@
 # NSFW bad websites
 ||erogazopple.com^$doc
 ||erogazoufactory.com^$doc
-
-# ------------------------------------------------------------------------------------------------ #
-
-# Overrides
-
-# https://github.com/uBlockOrigin/uAssets/commit/d1bbe4df7c14133e827cc8fb1d92046a1b26abf0
-||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important,badfilter
 
 # ------------------------------------------------------------------------------------------------ #
 
