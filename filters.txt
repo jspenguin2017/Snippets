@@ -34,26 +34,3 @@
 ||erogazoufactory.com^$doc
 
 # ------------------------------------------------------------------------------------------------ #
-
-# Testing
-
-# https://github.com/jspenguin2017/uBlockProtector/issues/390
-# https://github.com/NanoAdblocker/NanoFilters/issues/277
-vvvvid.it##+js(nano-vvvvid-it.js)
-
-# Colombia ads
-adageindia.in##+js(nano-colombiaonline-com.js)
-bombaytimes.com##+js(nano-colombiaonline-com.js)
-businessinsider.in##+js(nano-colombiaonline-com.js)
-gadgetsnow.com##+js(nano-colombiaonline-com.js)
-gizmodo.in##+js(nano-colombiaonline-com.js)
-iamgujarat.com##+js(nano-colombiaonline-com.js)
-idiva.com##+js(nano-colombiaonline-com.js)
-in.techradar.com##+js(nano-colombiaonline-com.js)
-indiatimes.com##+js(nano-colombiaonline-com.js)
-lifehacker.co.in##+js(nano-colombiaonline-com.js)
-mensxp.com##+js(nano-colombiaonline-com.js)
-samayam.com##+js(nano-colombiaonline-com.js)
-timesofindia.com##+js(nano-colombiaonline-com.js)
-
-# ------------------------------------------------------------------------------------------------ #
