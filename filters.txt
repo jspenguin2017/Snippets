@@ -35,6 +35,7 @@ pixiv.net##a[target="premium_noads"]
 pixiv.net##iframe[name="expandedFooter"]:upward(1)
 linkedin.com###voyager-feed > #voyager-feed:style(padding: 0px !important;)
 linkedin.com###voyager-feed:style(padding: 16px !important;)
+outlook.live.com###owaadbar1:upward(3)
 
 # -------------------------------------------------------------------------------------------------------------------- #
 
