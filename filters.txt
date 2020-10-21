@@ -37,9 +37,6 @@ linkedin.com###voyager-feed > #voyager-feed:style(padding: 0px !important;)
 linkedin.com###voyager-feed:style(padding: 16px !important;)
 outlook.live.com###owaadbar1:upward(3)
 
-# Unbreak
-pixiv.net#@#iframe[width="728"][height="90"]:upward(2)
-
 # -------------------------------------------------------------------------------------------------------------------- #
 
 # Security
