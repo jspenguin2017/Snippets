@@ -11,15 +11,9 @@
 
 # Annoyance
 
-# Spam bots
+# Chat Widgets
 ||az.jusbr.com/libs/chatlib/$3p
-||chatra.io^$3p
-||driftt.com^$3p
-||intercom.io^$3p
-||jivosite.com^$3p
-||livechatinc.com^$3p
 ||optinchat.com^$3p
-||tawk.to^$3p
 
 # Overrides
 @@||zopim.com^$domain=uphold.com
@@ -36,6 +30,7 @@ pixiv.net##iframe[name="expandedFooter"]:upward(1)
 linkedin.com###voyager-feed > #voyager-feed:style(padding: 0px !important;)
 linkedin.com###voyager-feed:style(padding: 16px !important;)
 outlook.live.com###owaadbar1:upward(3)
+researchgate.net##.lite-page__header-navigation--with-ad:style(top: 0px !important;)
 
 # -------------------------------------------------------------------------------------------------------------------- #
 
