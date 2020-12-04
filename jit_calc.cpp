@@ -84,7 +84,7 @@ int main()
 	// Check if memory allocation succeeded
 	if (payload == NULL)
 	{
-		//Failed, can't even get 512 bytes of memory...
+		// Failed, cannot even get 512 bytes of memory...
 		std::cout << "Could not allocate JIT memory" << std::endl;
 		pause();
 		return 1;
