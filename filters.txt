@@ -15,6 +15,10 @@
 ||az.jusbr.com/libs/chatlib/$3p
 ||optinchat.com^$3p
 
+# Overlays
+pixiv.net##a[href^="/premium/lead/lp"]
+pixiv.net##iframe[src^="https://imp.pixiv.net/premium_lp"] + ul::after
+
 # Overrides
 @@||zopim.com^$domain=uphold.com
 pixiv.net#@#section[class] aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"]:upward(1)
