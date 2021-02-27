@@ -6,8 +6,6 @@ Design and description licensed under CC-BY-4.0.
 
 ## Lightsail Servers
 
-`hugoxu.com` base domain, registration automatically renew.
-
 ### `legacy.hugoxu.com`
 
 Legacy server.
