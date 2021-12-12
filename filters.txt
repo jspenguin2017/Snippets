@@ -23,6 +23,7 @@ pixiv.net##iframe[src^="https://imp.pixiv.net/premium_lp"] + ul::after
 @@||zopim.com^$domain=uphold.com
 pixiv.net#@#section[class] aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"]:upward(1)
 ||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important,badfilter
+@@||service.force.com/embeddedservice/*/esw.min.js$script,domain=cyberpowersystems.com
 
 # -------------------------------------------------------------------------------------------------------------------- #
 
@@ -33,6 +34,7 @@ pixiv.net##a[target="premium_noads"]
 pixiv.net##iframe[name="expandedFooter"]:upward(1)
 linkedin.com###voyager-feed > #voyager-feed:style(padding: 0px !important;)
 linkedin.com###voyager-feed:style(padding: 16px !important;)
+outlook.live.com##[aria-label="advertisement"]:upward(3)
 outlook.live.com###owaadbar1:upward(3)
 researchgate.net##.lite-page__header-navigation--with-ad:style(top: 0px !important;)
 
