@@ -34,8 +34,6 @@ pixiv.net##a[target="premium_noads"]
 pixiv.net##iframe[name="expandedFooter"]:upward(1)
 linkedin.com###voyager-feed > #voyager-feed:style(padding: 0px !important;)
 linkedin.com###voyager-feed:style(padding: 16px !important;)
-outlook.live.com##[aria-label="advertisement"]:upward(3)
-outlook.live.com###owaadbar1:upward(3)
 researchgate.net##.lite-page__header-navigation--with-ad:style(top: 0px !important;)
 
 # -------------------------------------------------------------------------------------------------------------------- #
@@ -49,5 +47,12 @@ researchgate.net##.lite-page__header-navigation--with-ad:style(top: 0px !importa
 # NSFW bad websites
 ||erogazopple.com^$doc
 ||erogazoufactory.com^$doc
+
+# -------------------------------------------------------------------------------------------------------------------- #
+
+# Other
+
+# Unbreak
+outlook.live.com#@##app div[class] > div[role="region"] ~ div[class]:not([data-max-width]):not([role]):has(div[class] > img[aria-label][src*="adbar"])
 
 # -------------------------------------------------------------------------------------------------------------------- #
