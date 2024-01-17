@@ -20,10 +20,10 @@ pixiv.net##a[href^="/premium/lead/lp"]
 pixiv.net##iframe[src^="https://imp.pixiv.net/premium_lp"] + ul::after
 
 # Overrides
-@@||zopim.com^$domain=uphold.com
-pixiv.net#@#section[class] aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"]:upward(1)
 ||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important,badfilter
+pixiv.net#@#section[class] aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"]:upward(1)
 @@||service.force.com/embeddedservice/*/esw.min.js$script,domain=cyberpowersystems.com
+@@||zopim.com^$domain=uphold.com
 
 # -------------------------------------------------------------------------------------------------------------------- #
 
@@ -54,5 +54,9 @@ researchgate.net##.lite-page__header-navigation--with-ad:style(top: 0px !importa
 
 # Unbreak
 outlook.live.com#@##app div[class] > div[role="region"] ~ div[class]:not([data-max-width]):not([role]):has(div[class] > img[aria-label][src*="adbar"])
+
+# Incorrect touch input detection
+pixiv.net##button:has(> div > svg):style(display: initial !important)
+pixiv.net##div:has(> button > div> svg):style(display: initial !important)
 
 # -------------------------------------------------------------------------------------------------------------------- #
