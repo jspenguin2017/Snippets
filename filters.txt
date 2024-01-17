@@ -56,7 +56,7 @@ researchgate.net##.lite-page__header-navigation--with-ad:style(top: 0px !importa
 outlook.live.com#@##app div[class] > div[role="region"] ~ div[class]:not([data-max-width]):not([role]):has(div[class] > img[aria-label][src*="adbar"])
 
 # Incorrect touch input detection
-pixiv.net##button:has(> div > svg):style(display: initial !important)
-pixiv.net##div:has(> button > div> svg):style(display: initial !important)
+pixiv.net##button:has(> div > svg):style(display: initial !important;)
+pixiv.net##div:has(> button > div> svg):style(display: initial !important;)
 
 # -------------------------------------------------------------------------------------------------------------------- #
