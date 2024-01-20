@@ -6,6 +6,7 @@ import time
 class DelayStart:
     def __init__(self):
         self.lockfile = f"{os.environ['HOME']}/ComfyUIStartLock"
+        print(f"DelayStart: Put this node between Latent Image and KSampler, and create {self.lockfile} to delay start")
 
     @classmethod
     def INPUT_TYPES(s):
@@ -23,7 +24,7 @@ class DelayStart:
         while os.path.isfile(self.lockfile):
             print(f"DelayStart: Remove {self.lockfile} to start")
             time.sleep(5)
-        print("DelayStart: Starting")
+        print(f"DelayStart: Lockfile {self.lockfile} does not exist, starting")
         return (latent,)
 
 NODE_CLASS_MAPPINGS = {
