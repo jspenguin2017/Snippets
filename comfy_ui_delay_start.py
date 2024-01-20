@@ -4,6 +4,9 @@ import os
 import time
 
 class DelayStart:
+    def __init__(self):
+        self.lockfile = f"{os.environ['HOME']}/ComfyUIStartLock"
+
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -13,14 +16,14 @@ class DelayStart:
         }
 
     RETURN_TYPES = ("LATENT",)
-    FUNCTION = "main"
+    FUNCTION = "execute"
     CATEGORY = "utils"
 
-    def main(self, latent):
-        lockfile = f"{os.environ['HOME']}/ComfyUIStartLock";
-        while os.path.isfile(lockfile):
-            print(f"Remove {lockfile} to start")
+    def execute(self, latent):
+        while os.path.isfile(self.lockfile):
+            print(f"DelayStart: Remove {self.lockfile} to start")
             time.sleep(5)
+        print("DelayStart: Starting")
         return (latent,)
 
 NODE_CLASS_MAPPINGS = {
