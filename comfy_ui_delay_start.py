@@ -14,7 +14,7 @@ class DelayStart:
 
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "main"
-    CATEGORY = "Sleep"
+    CATEGORY = "utils"
 
     def main(self, latent):
         lockfile = f"{os.environ['HOME']}/ComfyUIStartLock";
