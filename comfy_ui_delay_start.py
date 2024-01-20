@@ -1,3 +1,5 @@
+# Licensed under CC0-1.0
+
 import os
 import time
 
